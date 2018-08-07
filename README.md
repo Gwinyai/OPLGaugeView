@@ -2,6 +2,8 @@
 
 A speedomter built with Swift that can be used to track the speed of travel. 
 
+![gaugeview screenshot](https://github.com/Gwinyai/OPLGaugeView/blob/master/screenshot.png)
+
 ## Installing
 
 ```
