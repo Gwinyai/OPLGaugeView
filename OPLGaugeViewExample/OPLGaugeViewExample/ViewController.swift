@@ -29,6 +29,32 @@ class ViewController: UIViewController, CLLocationManagerDelegate {
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
+        
+        if CLLocationManager.authorizationStatus() != .authorizedWhenInUse {
+            
+            manager.requestWhenInUseAuthorization()
+            
+        }
+        else {
+            
+            manager.startUpdatingLocation()
+            
+        }
+        
+        manager.desiredAccuracy = kCLLocationAccuracyBest
+        
+        manager.delegate = self
+        
+    }
+    
+    func locationManager(_ manager: CLLocationManager, didChangeAuthorization status: CLAuthorizationStatus) {
+        
+        if status == .authorizedWhenInUse {
+            
+            manager.startUpdatingLocation()
+            
+        }
+        
     }
     
     func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {

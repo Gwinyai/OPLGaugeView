@@ -23,7 +23,7 @@ open class OPLGaugeLayer: CAShapeLayer {
             
             let springAnimation = CASpringAnimation(keyPath: event)
             
-            springAnimation.timingFunction = CAMediaTimingFunction(name: kCAMediaTimingFunctionEaseOut)
+            springAnimation.timingFunction = CAMediaTimingFunction(name: CAMediaTimingFunctionName.easeOut)
             
             springAnimation.initialVelocity = 0.8
             

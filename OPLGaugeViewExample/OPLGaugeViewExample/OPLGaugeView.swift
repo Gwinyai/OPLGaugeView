@@ -216,7 +216,7 @@ open class OPLGaugeView: UIView {
             
             if displayNumbers {
             
-                label.draw(at: textPos, withAttributes: [NSAttributedStringKey.font: textFont, NSAttributedStringKey.foregroundColor: textColor])
+                label.draw(at: textPos, withAttributes: [NSAttributedString.Key.font: textFont, NSAttributedString.Key.foregroundColor: textColor])
                 
             }
             
@@ -228,9 +228,44 @@ open class OPLGaugeView: UIView {
         
     }
     
+    open override class var layerClass: AnyClass {
+        
+        return OPLGaugeLayer.self
+        
+    }
     
-    open override func didMoveToSuperview() {
-        super.didMoveToSuperview()
+    open override func awakeFromNib() {
+        super.awakeFromNib()
+        
+        setupView()
+        
+    }
+    
+    public required init?(coder aDecoder: NSCoder) {
+        
+        super.init(coder: aDecoder)
+        
+        setupView()
+        
+    }
+    
+    override init(frame: CGRect) {
+        
+        super.init(frame: frame)
+        
+        setupView()
+        
+    }
+    
+    convenience init() {
+        
+        self.init(frame: CGRect.zero)
+        
+        setupView()
+        
+    }
+    
+    private func setupView() {
         
         gauge.fillColor = gaugeColor.cgColor
         
