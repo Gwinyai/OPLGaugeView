@@ -1,6 +1,6 @@
 # OPLGaugeView
 
-A speedomter built with Swift that can be used to track the speed of travel. 
+A speedomter built with Swift that can be used to track the speed of travel. This project is taken directly from the course [iOS 12 & Swift 4 - App Design, UI/UX and Development](https://www.udemy.com/app-design-uiux-plus-ios-development/). If you would like to learn more about how to build custom UI components please refer to the course.
 
 ![gaugeview screenshot](https://github.com/Gwinyai/OPLGaugeView/blob/master/screenshot.png)
 
